@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/_button";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(button) {
+  display: inline-block;
+  cursor: pointer;
+  background: $--button-default-background-color;
+  border: $--border-base;
+  border-color: $--button-default-border-color;
+  color: $--button-default-font-color;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: $--button-box-shadow;
+  outline: none;
+  margin: 0;
+  font-weight: $--button-font-weight;
+  transition: .1s;
+
+  @include utils-user-select(none);
+  
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+
+  &:hover,
+  &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+    box-shadow: $--button-modifier-box-shadow;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  @include m(primary) {
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
+
+  @include m(info) {
+    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+  }
+
+}

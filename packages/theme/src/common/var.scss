@@ -1,0 +1,57 @@
+/* Typography */
+$--font-size-base: 14px !default;
+$--font-weight-primary: 500 !default;
+
+/* Color */
+$--color-primary: #5fb870 !default;
+$--color-info: #7298ff !default;
+$--color-white: #ffffff !default;
+$--color-black: #000000 !default;
+
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+
+$--color-text-regular: #838383 !default;
+
+$--border-color-base: #dfd8d8 !default;
+
+/* Border */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+$--border-radius-base: 2px !default;
+
+/* Button */
+
+$--button-font-size: $--font-size-base !default;
+$--button-font-weight: $--font-weight-primary !default;
+$--button-border-radius: $--border-radius-base !default;
+$--button-padding-vertical: 10px !default;
+$--button-padding-horizontal: 24px !default;
+$--button-box-shadow: 0 1px 8px 0px rgba(0,0,0,.1), 1px 0px 8px 0 rgba(0,0,0,.05), -1px 0px 8px 0 rgba(0,0,0,.05);
+$--button-modifier-box-shadow: 0 3px 10px 0px rgba(0,0,0,.1), 2px 0px 10px 0 rgba(0,0,0,.05), -2px 0px 10px 0 rgba(0,0,0,.05);
+
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+// default
+$--button-default-font-color: $--color-text-regular !default;
+$--button-default-border-color: $--border-color-base !default;
+$--button-default-background-color: $--color-white !default;
+
+// primary
+$--button-primary-font-color: $--color-white !default;
+$--button-primary-border-color: $--color-primary !default;
+$--button-primary-background-color: $--color-primary !default;
+
+// info
+$--button-info-font-color: $--color-white !default;
+$--button-info-border-color: $--color-info !default;
+$--button-info-background-color: $--color-info !default;

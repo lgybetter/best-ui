@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <bt-button>Send Email</bt-button>
+      <bt-button type="primary">Send Email</bt-button>
+      <bt-button type="info">Send Email</bt-button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'app'
 }
 </script>
 
