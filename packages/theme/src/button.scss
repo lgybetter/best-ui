@@ -42,6 +42,11 @@
     outline: none;
   }
 
+  @include when(circle) {
+    border-radius: 50%;
+    padding: 10px;
+  }
+
   @include m(primary) {
     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
   }

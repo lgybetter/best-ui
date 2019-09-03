@@ -23,3 +23,11 @@
     }
   }
 }
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

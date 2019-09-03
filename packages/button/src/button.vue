@@ -2,8 +2,12 @@
   <button class="bt-button"
     @click="handleClick"
     :class="[
-      type ? `bt-button--${type}` : ''
+      type ? `bt-button--${type}` : '',
+      {
+        'is-circle': circle
+      }
     ]">
+    <i :class="`fa-${icon}`" v-if="icon"></i>
     <span v-if="$slots.default">
       <slot></slot>
     </span>
@@ -19,6 +23,11 @@ export default {
     type: {
       type: String,
       default: 'default'
+    },
+    circle: Boolean,
+    icon: {
+      type: String,
+      default: ''
     }
   },
 
