@@ -10,4 +10,15 @@
   .bt-input__inner {
     cursor: pointer;
   }
+  i {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 24px;
+    transition: transform .3s;
+    transform: rotateZ(180deg);
+    @include when(reverse) {
+      transform: rotateZ(0deg);
+    }
+  }
 }

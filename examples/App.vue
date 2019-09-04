@@ -21,7 +21,7 @@
       </bt-input>
     </div>
     <div class="panel">
-      <bt-select>
+      <bt-select v-model="select">
         <bt-option :value="0"
           label="Vue">
         </bt-option>
@@ -39,7 +39,12 @@
 <script>
 
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      select: 0
+    }
+  }
 }
 </script>
 
@@ -53,6 +58,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  padding: 20px;
 }
 
 .panel {

@@ -24,5 +24,11 @@
     &:hover {
       background-color: $--select-option-hover-background;
     }
+
+    &.selected {
+      color: $--select-option-selected-font-color;
+      background-color: $--select-option-hover-background;
+      font-weight: bold;
+    }
   }
 }

@@ -5,6 +5,7 @@
   <template v-if="!isTextArea">
     <input class="bt-input__inner"
       v-bind="$attrs"
+      v-on="$listeners"
       :readonly="readonly"
       @change="handleChange"
       @input="handleInput"/>
@@ -12,6 +13,7 @@
   <textarea v-else
     class="bt-textarea__inner"
     v-bind="$attrs"
+    v-on="$listeners"
     :readonly="readonly"
     @change="handleChange"
     @input="handleInput">
