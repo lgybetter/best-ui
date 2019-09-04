@@ -1,3 +1,5 @@
+@import "./common/var";
+
 html {
   -webkit-text-size-adjust: none;
 }
@@ -10,8 +12,7 @@ body {
 
 body {
   line-height: 1.5;
-  font-family: "Microsoft YaHei", 微软雅黑, Arial, Helvetica, sans-serif;
-  color: #333;
+  color: $--color-text-regular;
 }
 
 div,
@@ -93,7 +94,7 @@ input[type="search"]::-webkit-search-cancel-button{
 }
 
 input::-webkit-input-placeholder {
-  color: #999;
+  color: $--color-text-placeholder;
 }
 
 input[type=file] {
@@ -104,7 +105,6 @@ input[type=file] {
 
 textarea {
   resize: none;
-  font-family: "Microsoft YaHei", 微软雅黑, Arial, Helvetica, sans-serif !important;
 }
 
 textarea:focus {
@@ -145,7 +145,7 @@ q::after {
 
 a {
   text-decoration: none;
-  color: #006eff;
+  color: $--color-primary;
 }
 
 a:active {
