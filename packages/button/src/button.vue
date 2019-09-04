@@ -36,5 +36,6 @@ export default {
       this.$emit('click', event)
     }
   }
+
 }
 </script>

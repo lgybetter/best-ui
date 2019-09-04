@@ -6,6 +6,20 @@
       <bt-button type="info">Send Email</bt-button>
       <bt-button type="primary" circle>Se</bt-button>
     </div>
+    <div class="panel">
+      <bt-input placeholder="Enter something"></bt-input>
+    </div>
+    <div class="panel">
+      <bt-input type="textarea"
+        placeholder="Enter something">
+      </bt-input>
+    </div>
+    <div class="panel">
+      <bt-input type="textarea"
+        :rows="4"
+        placeholder="Enter something">
+      </bt-input>
+    </div>
   </div>
 </template>
 

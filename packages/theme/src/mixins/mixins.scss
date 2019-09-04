@@ -2,14 +2,43 @@
 @import "../common/var";
 
 /* BEM */
+
+// block
 @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+  $B: $namespace+'-'+$block !global; // $B is the global var
 
   .#{$B} {
     @content;
   }
 }
 
+// element
+@mixin e($element) {
+  $E: $element !global; // $E is the global var
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+// modifier
 @mixin m($modifier) {
   $selector: &;
   $currentSelector: "";

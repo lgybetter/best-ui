@@ -1,3 +1,6 @@
+/* Transition */
+$--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
+
 /* Typography */
 $--font-size-base: 14px !default;
 $--font-weight-primary: 500 !default;
@@ -7,6 +10,7 @@ $--color-primary: #5fb870 !default;
 $--color-info: #7298ff !default;
 $--color-white: #ffffff !default;
 $--color-black: #000000 !default;
+$--background-color-base: #f7f7f7 !default;
 
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
@@ -19,12 +23,14 @@ $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
 
 $--color-text-regular: #838383 !default;
+$--color-text-placeholder: #bebebe !default;
 
-$--border-color-base: #dfd8d8 !default;
+$--border-color-base: #e2e2e2 !default;
 
 /* Border */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
+$--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 $--border-radius-base: 2px !default;
 
@@ -55,3 +61,16 @@ $--button-primary-background-color: $--color-primary !default;
 $--button-info-font-color: $--color-white !default;
 $--button-info-border-color: $--color-info !default;
 $--button-info-background-color: $--color-info !default;
+
+
+/* Input */
+
+$--input-font-color: $--color-text-regular !default;
+$--input-background-color: $--background-color-base !default;
+$--input-border: $--border-base !default;
+$--input-border-radius: $--border-radius-base !default;
+$--input-padding-vertical: 10px !default;
+$--input-padding-horizontal: 24px !default;
+$--input-placeholder-color: $--color-text-placeholder !default;
+$--input-hover-border: $--border-color-hover !default;
+$--input-focus-border: $--color-primary !default;
