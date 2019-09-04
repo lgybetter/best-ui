@@ -45,6 +45,10 @@
   @include when(circle) {
     border-radius: 50%;
     padding: 10px;
+    font-size: 0;
+    & > * {
+      font-size: $--button-font-size;
+    }
   }
 
   @include m(primary) {

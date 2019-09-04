@@ -5,12 +5,14 @@
   <template v-if="!isTextArea">
     <input class="bt-input__inner"
       v-bind="$attrs"
+      :readonly="readonly"
       @change="handleChange"
       @input="handleInput"/>
   </template>
   <textarea v-else
     class="bt-textarea__inner"
     v-bind="$attrs"
+    :readonly="readonly"
     @change="handleChange"
     @input="handleInput">
   </textarea>
@@ -26,7 +28,8 @@ export default {
     type: {
       type: String,
       default: 'text'
-    }
+    },
+    readonly: Boolean
   },
 
   computed: {

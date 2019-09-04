@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(select) {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .bt-input__inner {
+    cursor: pointer;
+  }
+}

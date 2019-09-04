@@ -1,9 +1,12 @@
-import Button from '../packages/button/index'
-import Input from '../packages/input/index'
+import Button from '~/button/index'
+import Input from '~/input/index'
+import { Select, Option } from '~/select/index'
 
 const components = [
   Button,
-  Input
+  Input,
+  Select,
+  Option
 ]
 
 const install = function (Vue, opts = {}) {
