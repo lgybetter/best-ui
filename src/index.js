@@ -1,6 +1,7 @@
 import Button from '~/button/index'
 import Input from '~/input/index'
-import { Select, Option } from '~/select/index'
+import Select from '~/select/index'
+import Option from '~/option/index'
 
 const components = [
   Button,
