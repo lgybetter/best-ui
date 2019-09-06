@@ -54,7 +54,6 @@ export default {
         return
       }
       const defaultSlot = this.$slots.default
-      console.log(defaultSlot)
       this.columns = defaultSlot.map(({ componentInstance }) => {
         return componentInstance
       })
