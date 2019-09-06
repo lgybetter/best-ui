@@ -7,7 +7,7 @@
   position: relative;
   box-shadow: $--table-box-shadow;
   color: $--table-font-color;
-  overflow-x: scroll;
+  overflow-x: auto;
   > table {
     width: 100%;
   }
