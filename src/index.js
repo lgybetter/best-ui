@@ -1,15 +1,17 @@
-import Button from '~/button/index'
-import Input from '~/input/index'
-import Select from '~/select/index'
-import Option from '~/option/index'
-import Table from '~/table/index'
+import Button from '~/button'
+import Input from '~/input'
+import Select from '~/select'
+import Option from '~/option'
+import Table from '~/table'
+import TableColumn from '~/table-column'
 
 const components = [
   Button,
   Input,
   Select,
   Option,
-  Table
+  Table,
+  TableColumn
 ]
 
 const install = function (Vue, opts = {}) {

@@ -1,25 +1,39 @@
+const renderRow = (h, rows, columns) => {
+  return rows.map(row => (
+    <tr>
+      {
+        columns.map(column => (
+          <td>{row[column.prop] || '--'}</td>
+        ))
+      }
+    </tr>
+  ))
+}
+
 export default {
   name: 'BtTableBody',
+
+  props: {
+    columns: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
 
   render (h) {
     return (
       <tbody class="bt-table__body">
-        <tr>
-          <td>betterlin</td>
-          <td>first</td>
-        </tr>
-        <tr>
-          <td>betterlin</td>
-          <td>first</td>
-        </tr>
-        <tr>
-          <td>betterlin</td>
-          <td>first</td>
-        </tr>
-        <tr>
-          <td>betterlin</td>
-          <td>first</td>
-        </tr>
+        {
+          renderRow.call(this, h, this.data, this.columns)
+        }
       </tbody>
     )
   }

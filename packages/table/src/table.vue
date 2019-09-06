@@ -1,9 +1,14 @@
 <template>
   <div class="bt-table">
     <table>
-      <slot></slot>
-      <table-header></table-header>
-      <table-body></table-body>
+      <div class="hidden-columns"
+        ref="hiddenColumns">
+        <slot></slot>
+      </div>
+      <table-header :columns="columns"></table-header>
+      <table-body :columns="columns"
+        :data="data">
+      </table-body>
       <table-footer></table-footer>
     </table>
   </div>
@@ -30,6 +35,28 @@ export default {
       default () {
         return []
       }
+    }
+  },
+
+  data () {
+    return {
+      columns: []
+    }
+  },
+
+  mounted () {
+    this.setColumns()
+  },
+
+  methods: {
+    setColumns () {
+      if (!this.$slots.default) {
+        return
+      }
+      const defaultSlot = this.$slots.default
+      this.columns = defaultSlot.map(({ componentInstance }) => {
+        return componentInstance
+      })
     }
   }
 }

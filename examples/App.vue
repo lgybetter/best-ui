@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div class="panel">
+    <div class="panel">
       <bt-button>Send Email</bt-button>
       <bt-button type="primary">Send Email</bt-button>
       <bt-button type="info">Send Email</bt-button>
@@ -32,10 +32,19 @@
           label="Angular">
         </bt-option>
       </bt-select>
-    </div> -->
-    <bt-table>
-      <bt-table-column></bt-table-column>
-    </bt-table>
+    </div>
+    <div class="panel">
+      <bt-table :data="list">
+        <bt-table-column
+          label="Name"
+          prop="name">
+        </bt-table-column>
+        <bt-table-column
+          label="Age"
+          prop="age">
+        </bt-table-column>
+      </bt-table>
+    </div>
   </div>
 </template>
 
@@ -45,7 +54,15 @@ export default {
   name: 'app',
   data () {
     return {
-      select: 0
+      select: 0,
+      list: [
+        { name: 'better1', age: 24 },
+        { name: 'better2', age: 25 },
+        { name: 'better3', age: 26 },
+        { name: 'better4', age: 27 },
+        { name: 'better5', age: 28 },
+        { name: 'better6', age: 29 }
+      ]
     }
   }
 }
