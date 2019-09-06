@@ -1,10 +1,10 @@
 /* Transition */
-$--font-path: 'fonts' !default;
-$--font-display: 'auto' !default;
-
+$--all-transition: all .1s cubic-bezier(.645,.045,.355,1) !default;
 $--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
 
 /* Typography */
+$--font-path: 'fonts' !default;
+$--font-display: 'auto' !default;
 $--font-size-base: 14px !default;
 $--font-weight-primary: 500 !default;
 
@@ -100,3 +100,4 @@ $--select-option-selected-font-color: $--color-primary !default;
 $--table-header-background-color: $--color-white !default;
 $--table-box-shadow: $--base-box-shadow !default;
 $--table-font-color: $--color-text-regular !default;
+$--table-row-hover-background-color: mix($--color-primary, $--background-color-base, 10%) !default;

@@ -38,6 +38,10 @@
         <bt-table-column
           label="Name"
           prop="name">
+          <span slot="header" slot-scope="{label}">{{label}}</span>
+          <span slot-scope="{name, href}">
+            <a :href="href">{{name}}</a>
+          </span>
         </bt-table-column>
         <bt-table-column
           label="Age"
@@ -56,12 +60,12 @@ export default {
     return {
       select: 0,
       list: [
-        { name: 'better1', age: 24 },
-        { name: 'better2', age: 25 },
-        { name: 'better3', age: 26 },
-        { name: 'better4', age: 27 },
-        { name: 'better5', age: 28 },
-        { name: 'better6', age: 29 }
+        { name: 'better1', age: 24, href: 'https://www.qq.com' },
+        { name: 'better2', age: 25, href: 'https://lgybetter.com' },
+        { name: 'better3', age: 26, href: 'https://www.github.com' },
+        { name: 'better4', age: 27, href: 'https://www.qq.com' },
+        { name: 'better5', age: 28, href: 'https://www.qq.com' },
+        { name: 'better6', age: 29, href: 'https://www.qq.com' }
       ]
     }
   }

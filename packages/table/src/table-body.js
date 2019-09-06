@@ -2,9 +2,18 @@ const renderRow = (h, rows, columns) => {
   return rows.map(row => (
     <tr>
       {
-        columns.map(column => (
-          <td>{row[column.prop] || '--'}</td>
-        ))
+        columns.map(column => {
+          if (column.$scopedSlots.default) {
+            return (
+              <td>
+                {column.$scopedSlots.default(row)}
+              </td>
+            )
+          } else if (column.$slots.default) {
+            return h('td', column.$slots.default)
+          }
+          return (<td>{row[column.prop] || '--'}</td>)
+        })
       }
     </tr>
   ))
