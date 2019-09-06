@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="panel">
+    <!-- <div class="panel">
       <bt-button>Send Email</bt-button>
       <bt-button type="primary">Send Email</bt-button>
       <bt-button type="info">Send Email</bt-button>
@@ -32,7 +32,8 @@
           label="Angular">
         </bt-option>
       </bt-select>
-    </div>
+    </div> -->
+    <bt-table></bt-table>
   </div>
 </template>
 

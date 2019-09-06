@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(table) {
+  position: relative;
+  box-shadow: $--table-box-shadow;
+  color: $--table-font-color;
+  > table {
+    width: 100%;
+  }
+
+  td, th {
+    padding: 14px 30px;
+  }
+
+  @include e(header) {
+    font-size: 15px;
+    background-color: $--table-header-background-color;
+  }
+
+  @include e(body) {
+    font-size: 14px;
+    tr:nth-child(odd) {
+      background: $--background-color-base;
+    }
+    tr:nth-child(even) {
+      background: $--color-white;
+    }
+  }
+
+}
