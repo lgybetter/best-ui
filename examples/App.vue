@@ -33,7 +33,9 @@
         </bt-option>
       </bt-select>
     </div> -->
-    <bt-table></bt-table>
+    <bt-table>
+      <bt-table-column></bt-table-column>
+    </bt-table>
   </div>
 </template>
 
