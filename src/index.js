@@ -4,6 +4,7 @@ import Select from '~/select'
 import Option from '~/option'
 import Table from '~/table'
 import TableColumn from '~/table-column'
+import Tag from '~/tag'
 
 const components = [
   Button,
@@ -11,7 +12,8 @@ const components = [
   Select,
   Option,
   Table,
-  TableColumn
+  TableColumn,
+  Tag
 ]
 
 const install = function (Vue, opts = {}) {

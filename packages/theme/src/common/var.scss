@@ -5,7 +5,12 @@ $--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !defa
 /* Typography */
 $--font-path: 'fonts' !default;
 $--font-display: 'auto' !default;
+$--font-size-extra-large: 20px !default;
+$--font-size-large: 18px !default;
+$--font-size-medium: 16px !default;
 $--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-extra-small: 12px !default;
 $--font-weight-primary: 500 !default;
 
 /* ZIndex */
@@ -101,3 +106,9 @@ $--table-header-background-color: $--color-white !default;
 $--table-box-shadow: $--base-box-shadow !default;
 $--table-font-color: $--color-text-regular !default;
 $--table-row-hover-background-color: mix($--color-primary, $--background-color-base, 10%) !default;
+
+/* Tag */
+$--tag-border-radius: 16px !default;
+$--tag-padding-vertical: 6px !default;
+$--tag-padding-horizontal: 24px !default;
+$--tag-default-background-color: $--background-color-base !default;

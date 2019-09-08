@@ -21,12 +21,12 @@
   }
 
   @include e(header) {
-    font-size: 15px;
+    font-size: $--font-size-medium;
     background-color: $--table-header-background-color;
   }
 
   @include e(body) {
-    font-size: 14px;
+    font-size: $--font-size-base;
     tr:nth-child(odd) {
       background: $--background-color-base;
     }

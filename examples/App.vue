@@ -49,6 +49,9 @@
         </bt-table-column>
       </bt-table>
     </div>
+    <div class="panel">
+      <bt-tag>open</bt-tag>
+    </div>
   </div>
 </template>
 

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+
+@include b(tag) {
+  display: inline-block;
+  position: relative;
+  padding: $--tag-padding-vertical $--tag-padding-horizontal;
+  border-radius: $--tag-border-radius;
+  color: $--color-text-regular;
+  font-size: $--font-size-extra-small;
+  background-color: $--tag-default-background-color;
+}
