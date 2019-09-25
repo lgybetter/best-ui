@@ -43,7 +43,7 @@
   }
 
   @include when(circle) {
-    border-radius: 50%;
+    border-radius: $--border-radius-circle;
     padding: 10px;
     font-size: 0;
     & > * {

@@ -6,6 +6,8 @@ import Table from '~/table'
 import TableColumn from '~/table-column'
 import Tag from '~/tag'
 import Panel from '~/panel'
+import Checkbox from '~/checkbox'
+import Radio from '~/radio'
 
 const components = [
   Button,
@@ -15,7 +17,9 @@ const components = [
   Table,
   TableColumn,
   Tag,
-  Panel
+  Panel,
+  Checkbox,
+  Radio
 ]
 
 const install = function (Vue, opts = {}) {

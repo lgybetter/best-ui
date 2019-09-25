@@ -15,7 +15,7 @@
   margin-top: 6px;
   box-shadow: $--select-dropdown-box-shadow;
   border: 1px solid #ddd;
-  padding: 6px 0;
+  padding: $--small-padding-vertical 0;
   font-size: $--font-size-base;
   cursor: pointer;
   @include e(item) {

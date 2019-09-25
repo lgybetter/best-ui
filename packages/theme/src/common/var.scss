@@ -31,8 +31,14 @@ $--default-padding-horizontal: 24px !default;
 // small
 $--small-padding-vertical: 6px !default;
 
+// medium
+$--medium-padding-vertical: 14px !default;
+
 // large
-$--large-padding-vertical: 20px !default;
+$--large-padding-vertical: 18px !default;
+
+// extra large
+$--extra-large-padding-vertical: 20px !default;
 
 /* Color */
 $--color-primary: #5fb870 !default;
@@ -40,6 +46,7 @@ $--color-info: #7298ff !default;
 $--color-white: #ffffff !default;
 $--color-warn: #ffa854 !default;
 $--color-black: #000000 !default;
+$--color-label: #d2d4d3 !default;
 $--background-color-base: #f7f7f7 !default;
 $--link-color-base: $--color-info !default;
 
@@ -64,6 +71,7 @@ $--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 $--border-radius-base: 2px !default;
+$--border-radius-circle: 50% !default;
 
 /* Button */
 
@@ -151,5 +159,14 @@ $--tag-warn-border-color: $--color-warn !default;
 $--tag-warn-background-color: $--color-warn !default;
 
 /* Panel */
-$--panel-padding-vertical: $--large-padding-vertical !default;
+$--panel-padding-vertical: $--extra-large-padding-vertical !default;
 $--panel-padding-horizontal: $--default-padding-horizontal !default;
+
+/* Checkbox */
+$--checkbox-size: 18px;
+$--checkbox-background-color: $--color-label !default;
+$--checkbox-border-radius: $--border-radius-base !default;
+
+/* Radio */
+$--radio-size: 18px;
+$--radio-background-color: $--color-label !default;

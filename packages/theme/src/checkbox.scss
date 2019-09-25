@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(checkbox) {
+
+  position: relative;
+  display: inline-block;
+  color: $--color-text-regular;
+  font-size: 0;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  @include e(input) {
+    display: inline-block;
+    font-size: 0;
+  }
+
+  @include e(inner) {
+    position: relative;
+    display: inline-block;
+    width: $--checkbox-size;
+    height: $--checkbox-size;
+    background-color: $--checkbox-background-color;
+    border-radius: $--checkbox-border-radius;
+    transition: .1s;
+
+    @include when(selected) {
+      background-color: $--color-primary;
+    }
+
+    &::after {
+      box-sizing: content-box;
+      content: "";
+      border: 1px solid #fff;
+      border-left: 0;
+      border-top: 0;
+      height: 10px;
+      left: 6px;
+      position: absolute;
+      top: 1px;
+      transform: rotate(45deg);
+      width: 5px;
+      transform-origin: center;
+    }
+  }
+
+  @include e(original) {
+    width: 0;
+    height: 0;
+    margin: 0;
+    outline: none;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  @include e(label) {
+    font-size: $--font-size-base;
+    margin-left: 6px;
+    vertical-align: top;
+  }
+}

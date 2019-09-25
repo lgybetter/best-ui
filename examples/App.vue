@@ -60,6 +60,14 @@
       <bt-tag icon="el-icon-close" type="info">open</bt-tag>
       <bt-tag icon="el-icon-close" type="warn">open</bt-tag>
     </bt-panel>
+    <bt-panel>
+      <bt-checkbox v-model="checked">React</bt-checkbox>
+      <bt-checkbox v-model="check">Vue</bt-checkbox>
+    </bt-panel>
+    <bt-panel>
+      <bt-radio v-model="radio" :label="1">React</bt-radio>
+      <bt-radio v-model="radio" :label="2">Vue</bt-radio>
+    </bt-panel>
   </div>
 </template>
 
@@ -69,6 +77,9 @@ export default {
   name: 'app',
   data () {
     return {
+      check: false,
+      checked: true,
+      radio: 1,
       select: 0,
       list: [
         { name: 'Tom', age: 24, href: 'https://www.qq.com', city: 'SZ' },

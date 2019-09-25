@@ -5,6 +5,7 @@
   padding: $--panel-padding-vertical $--panel-padding-horizontal;
   box-shadow: $--panel-box-shadow;
   background-color: $--color-white;
+  font-size: 0;
   & + & {
     margin-top: 20px;
   }
