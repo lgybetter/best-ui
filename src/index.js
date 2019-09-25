@@ -5,6 +5,7 @@ import Option from '~/option'
 import Table from '~/table'
 import TableColumn from '~/table-column'
 import Tag from '~/tag'
+import Panel from '~/panel'
 
 const components = [
   Button,
@@ -13,7 +14,8 @@ const components = [
   Option,
   Table,
   TableColumn,
-  Tag
+  Tag,
+  Panel
 ]
 
 const install = function (Vue, opts = {}) {

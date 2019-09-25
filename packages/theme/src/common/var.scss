@@ -19,15 +19,29 @@ $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
 
 /* BoxShadow */
-$--base-box-shadow: 0 1px 5px 0px rgba(0,0,0,.1), 1px 0px 5px 0 rgba(0,0,0,.05), -1px 0px 5px 0 rgba(0,0,0,.05);
+$--base-box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--panel-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* Padding */
+
+// base
+$--default-padding-vertical: 8px !default;
+$--default-padding-horizontal: 24px !default;
+
+// small
+$--small-padding-vertical: 6px !default;
+
+// large
+$--large-padding-vertical: 20px !default;
 
 /* Color */
 $--color-primary: #5fb870 !default;
 $--color-info: #7298ff !default;
 $--color-white: #ffffff !default;
+$--color-warn: #ffa854 !default;
 $--color-black: #000000 !default;
 $--background-color-base: #f7f7f7 !default;
-$--link-color-base: #3c86c7 !default;
+$--link-color-base: $--color-info !default;
 
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
@@ -56,9 +70,9 @@ $--border-radius-base: 2px !default;
 $--button-font-size: $--font-size-base !default;
 $--button-font-weight: $--font-weight-primary !default;
 $--button-border-radius: $--border-radius-base !default;
-$--button-padding-vertical: 10px !default;
-$--button-padding-horizontal: 24px !default;
-$--button-box-shadow: 0 1px 8px 0px rgba(0,0,0,.1), 1px 0px 8px 0 rgba(0,0,0,.05), -1px 0px 8px 0 rgba(0,0,0,.05);
+$--button-padding-vertical: $--default-padding-vertical !default;
+$--button-padding-horizontal: $--default-padding-horizontal !default;
+$--button-box-shadow: $--base-box-shadow;
 $--button-modifier-box-shadow: $--base-box-shadow;
 
 $--button-hover-tint-percent: 20% !default;
@@ -79,6 +93,10 @@ $--button-info-font-color: $--color-white !default;
 $--button-info-border-color: $--color-info !default;
 $--button-info-background-color: $--color-info !default;
 
+// warn
+$--button-warn-font-color: $--color-white !default;
+$--button-warn-border-color: $--color-warn !default;
+$--button-warn-background-color: $--color-warn !default;
 
 /* Input */
 
@@ -86,8 +104,8 @@ $--input-font-color: $--color-text-regular !default;
 $--input-background-color: $--background-color-base !default;
 $--input-border: $--border-base !default;
 $--input-border-radius: $--border-radius-base !default;
-$--input-padding-vertical: 10px !default;
-$--input-padding-horizontal: 24px !default;
+$--input-padding-vertical: $--default-padding-vertical !default;
+$--input-padding-horizontal: $--default-padding-horizontal !default;
 $--input-placeholder-color: $--color-text-placeholder !default;
 $--input-hover-border: $--border-color-hover !default;
 $--input-focus-border: $--color-primary !default;
@@ -108,7 +126,30 @@ $--table-font-color: $--color-text-regular !default;
 $--table-row-hover-background-color: mix($--color-primary, $--background-color-base, 10%) !default;
 
 /* Tag */
-$--tag-border-radius: 16px !default;
-$--tag-padding-vertical: 6px !default;
-$--tag-padding-horizontal: 24px !default;
+$--tag-border-radius: 15px !default;
+$--tag-padding-vertical: $--small-padding-vertical !default;
+$--tag-padding-horizontal: $--default-padding-horizontal !default;
+
+// default
+$--tag-default-font-color: $--color-text-regular !default;
+$--tag-default-border-color: $--border-color-base !default;
 $--tag-default-background-color: $--background-color-base !default;
+
+// primary
+$--tag-primary-font-color: $--color-white !default;
+$--tag-primary-border-color: $--color-primary !default;
+$--tag-primary-background-color: $--color-primary !default;
+
+// info
+$--tag-info-font-color: $--color-white !default;
+$--tag-info-border-color: $--color-info !default;
+$--tag-info-background-color: $--color-info !default;
+
+// warn
+$--tag-warn-font-color: $--color-white !default;
+$--tag-warn-border-color: $--color-warn !default;
+$--tag-warn-background-color: $--color-warn !default;
+
+/* Panel */
+$--panel-padding-vertical: $--large-padding-vertical !default;
+$--panel-padding-horizontal: $--default-padding-horizontal !default;

@@ -1,12 +1,13 @@
 <template>
-  <button class="bt-button"
-    @click="handleClick"
-    :class="[
+  <button
+  :class="[
+      'bt-button',
       type ? `bt-button--${type}` : '',
       {
         'is-circle': circle
       }
-    ]">
+    ]"
+  @click="handleClick">
     <i :class="icon" v-if="icon"></i>
     <span v-if="$slots.default">
       <slot></slot>

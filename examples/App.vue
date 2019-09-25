@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <div class="panel">
+    <bt-panel>
       <bt-button>Send Email</bt-button>
       <bt-button type="primary">Send Email</bt-button>
       <bt-button type="info">Send Email</bt-button>
+      <bt-button type="warn">Send Email</bt-button>
       <bt-button type="primary" circle icon="el-icon-plus"></bt-button>
-    </div>
-    <div class="panel">
+    </bt-panel>
+    <bt-panel>
       <bt-input placeholder="Enter something"></bt-input>
-    </div>
-    <div class="panel">
+    </bt-panel>
+    <bt-panel>
       <bt-input type="textarea"
         placeholder="Enter something">
       </bt-input>
-    </div>
-    <div class="panel">
+    </bt-panel>
+    <bt-panel>
       <bt-input type="textarea"
         :rows="4"
         placeholder="Enter something">
       </bt-input>
-    </div>
-    <div class="panel">
+    </bt-panel>
+    <bt-panel>
       <bt-select v-model="select">
         <bt-option :value="0"
           label="Vue">
@@ -32,8 +33,8 @@
           label="Angular">
         </bt-option>
       </bt-select>
-    </div>
-    <div class="panel">
+    </bt-panel>
+    <bt-panel>
       <bt-table :data="list">
         <bt-table-column
           label="Name"
@@ -47,11 +48,18 @@
           label="Age"
           prop="age">
         </bt-table-column>
+        <bt-table-column
+          label="City"
+          prop="city">
+        </bt-table-column>
       </bt-table>
-    </div>
-    <div class="panel">
-      <bt-tag>open</bt-tag>
-    </div>
+    </bt-panel>
+    <bt-panel>
+      <bt-tag icon="el-icon-close">open</bt-tag>
+      <bt-tag icon="el-icon-close" type="primary">open</bt-tag>
+      <bt-tag icon="el-icon-close" type="info">open</bt-tag>
+      <bt-tag icon="el-icon-close" type="warn">open</bt-tag>
+    </bt-panel>
   </div>
 </template>
 
@@ -63,12 +71,9 @@ export default {
     return {
       select: 0,
       list: [
-        { name: 'better1', age: 24, href: 'https://www.qq.com' },
-        { name: 'better2', age: 25, href: 'https://lgybetter.com' },
-        { name: 'better3', age: 26, href: 'https://www.github.com' },
-        { name: 'better4', age: 27, href: 'https://www.qq.com' },
-        { name: 'better5', age: 28, href: 'https://www.qq.com' },
-        { name: 'better6', age: 29, href: 'https://www.qq.com' }
+        { name: 'Tom', age: 24, href: 'https://www.qq.com', city: 'SZ' },
+        { name: 'Jhon', age: 25, href: 'https://lgybetter.com', city: 'GZ' },
+        { name: 'Sam', age: 26, href: 'https://www.github.com', city: 'SH' }
       ]
     }
   }
@@ -85,15 +90,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding: 20px;
-}
-
-.panel {
-  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
-  padding: 20px;
-  background-color: #fff;
-  & + .panel {
-    margin-top: 20px;
-  }
+  padding: 40px 20px;
 }
 </style>

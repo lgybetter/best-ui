@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "common/var";
+
+@include b(panel) {
+  padding: $--panel-padding-vertical $--panel-padding-horizontal;
+  box-shadow: $--panel-box-shadow;
+  background-color: $--color-white;
+  & + & {
+    margin-top: 20px;
+  }
+}

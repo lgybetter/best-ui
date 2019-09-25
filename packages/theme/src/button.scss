@@ -59,4 +59,8 @@
     @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
   }
 
+  @include m(warn) {
+    @include button-variant($--button-warn-font-color, $--button-warn-background-color, $--button-warn-border-color);
+  }
+
 }

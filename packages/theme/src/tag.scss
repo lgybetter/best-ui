@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "common/var";
+@import "mixins/_button";
 @import "mixins/mixins";
 @import "mixins/utils";
 
@@ -12,4 +13,41 @@
   color: $--color-text-regular;
   font-size: $--font-size-extra-small;
   background-color: $--tag-default-background-color;
+  transition: .1s;
+
+  &:hover,
+  &:focus {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  i {
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include m(primary) {
+    @include button-variant($--tag-primary-font-color, $--tag-primary-background-color, $--tag-primary-border-color);
+  }
+
+  @include m(info) {
+    @include button-variant($--tag-info-font-color, $--tag-info-background-color, $--tag-info-border-color);
+  }
+
+  @include m(warn) {
+    @include button-variant($--tag-warn-font-color, $--tag-warn-background-color, $--tag-warn-border-color);
+  }
+
 }
