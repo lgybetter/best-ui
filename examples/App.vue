@@ -68,6 +68,19 @@
       <bt-radio v-model="radio" :label="1">React</bt-radio>
       <bt-radio v-model="radio" :label="2">Vue</bt-radio>
     </bt-panel>
+    <bt-panel>
+      <bt-row>
+        <bt-col :span="8">
+          <bt-input placeholder="Enter something"></bt-input>
+        </bt-col>
+        <bt-col :span="8">
+          <bt-input placeholder="Enter something"></bt-input>
+        </bt-col>
+        <bt-col :span="8">
+          <bt-input placeholder="Enter something"></bt-input>
+        </bt-col>
+      </bt-row>
+    </bt-panel>
   </div>
 </template>
 

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(row) {
+  @include utils-clearfix;
+  position: relative;
+  box-sizing: border-box;
+}
