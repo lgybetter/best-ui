@@ -1,27 +1,26 @@
-import schema from 'async-validator'
+import Vue from 'vue'
 
-/**
- *
- * @param {*} model
- */
-function transformModel (model) {
-  Object.entries(model).forEach(([key, value]) => {
-  })
-}
+const FormModel = Vue.extend({
+  data () {
+    return {
+      value: {},
+      fields: []
+    }
+  },
 
-class FormModel {
-  model = {}
-  constructor (model) {
-    this.model = model
+  methods: {
+    addFields (field) {
+    }
   }
-  validate () {
+})
 
+export default class FormModelWrapper extends FormModel {
+  constructor (value = {}) {
+    super()
+    this.value = value
   }
 }
 
-export function createModel (model) {
-  const { fields, rules } = transformModel(model)
-  return new FormModel(fields, rules)
+export function createFormModel (value) {
+  return new FormModelWrapper(value)
 }
-
-export default FormModel
