@@ -81,10 +81,22 @@
         </bt-col>
       </bt-row>
     </bt-panel>
+    <bt-panel>
+      <bt-form :model="formModel" style="width: 500px;">
+        <bt-form-item label="Name" prop="name">
+          <bt-input slot-scope="{value}" v-model="value"></bt-input>
+        </bt-form-item>
+        <bt-form-item label="Age" prop="age">
+          <bt-input slot-scope="{value}" v-model="value"></bt-input>
+        </bt-form-item>
+      </bt-form>
+    </bt-panel>
   </div>
 </template>
 
 <script>
+
+import { createFormModel } from '~/form'
 
 export default {
   name: 'app',
@@ -98,7 +110,11 @@ export default {
         { name: 'Tom', age: 24, href: 'https://www.qq.com', city: 'SZ' },
         { name: 'Jhon', age: 25, href: 'https://lgybetter.com', city: 'GZ' },
         { name: 'Sam', age: 26, href: 'https://www.github.com', city: 'SH' }
-      ]
+      ],
+      formModel: createFormModel({
+        name: 'Best',
+        age: 2
+      })
     }
   }
 }

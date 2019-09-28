@@ -4,12 +4,27 @@ const FormModel = Vue.extend({
   data () {
     return {
       value: {},
-      fields: []
+      fields: {}
     }
   },
 
   methods: {
-    addFields (field) {
+    addFields (prop, field) {
+      this.fields[prop] = field
+    },
+
+    validate () {
+      return new Promise((resolve, reject) => {
+        const fields = this.fields
+        Object.entries(fields).forEach(([key, instance]) => {
+          instance.validate('', errors => {
+            if (errors) {
+              reject(errors)
+            }
+          })
+        })
+        resolve()
+      })
     }
   }
 })

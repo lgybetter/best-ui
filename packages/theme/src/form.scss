@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(form) {
+
+}
+
+@include b(form-item) {
+  display: inline-block;
+  width: 100%;
+  & + & {
+    margin-top: 30px;
+  }
+  @include e(label) {
+    float: left;
+    font-size: $--font-size-small;
+    color: $--color-text-tip;
+    margin-bottom: 10px;
+  }
+  @include e(inner) {
+  }
+}

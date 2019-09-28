@@ -10,6 +10,8 @@ import Checkbox from '~/checkbox'
 import Radio from '~/radio'
 import Row from '~/row'
 import Col from '~/col'
+import Form from '~/form'
+import FormItem from '~/form-item'
 
 const components = [
   Button,
@@ -23,7 +25,9 @@ const components = [
   Checkbox,
   Radio,
   Row,
-  Col
+  Col,
+  Form,
+  FormItem
 ]
 
 const install = function (Vue, opts = {}) {
