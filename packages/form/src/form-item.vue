@@ -5,13 +5,13 @@
       {{label}}
     </label>
     <div class="bt-form-item__inner">
-      <slot :value="fieldValue" :model="formModel"></slot>
+      <slot :model="formModel.value" :value="fieldValue"></slot>
     </div>
   </div>
 </template>
 
 <script>
-import AsyncValidator from 'async-validator';
+import AsyncValidator from 'async-validator'
 
 export default {
   name: 'BtFormItem',
@@ -22,8 +22,7 @@ export default {
       default: ''
     },
     prop: {
-      type: String,
-      required: true
+      type: String
     },
     rules: Object
   },
@@ -33,11 +32,11 @@ export default {
   computed: {
     innerRules () {
       if (this.rules) {
-        return this.rules;
+        return this.rules
       }
-      let formRules = this.formRules;
-      formRules = formRules ? formRules[this.prop] : [];
-      return [].concat(formRules || []);
+      let formRules = this.formRules
+      formRules = formRules ? formRules[this.prop] : []
+      return [].concat(formRules || [])
     },
 
     fieldValue () {
@@ -57,20 +56,19 @@ export default {
       let rules = this.innerRules
 
       if (!rules || rules.length === 0) {
-        return callback();
+        return callback()
       }
 
-      let descriptor = {};
-      descriptor[this.prop] = rules;
+      let descriptor = {}
+      descriptor[this.prop] = rules
 
-      const validator = new AsyncValidator(descriptor);
-      
-      let model = {};
-      model[this.prop] = this.fieldValue;
+      const validator = new AsyncValidator(descriptor)
+      let model = {}
+      model[this.prop] = this.fieldValue
 
       validator.validate(model, { firstFields: true }, errors => {
-        callback(errors);
-      });
+        callback(errors)
+      })
     }
   }
 }

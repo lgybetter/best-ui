@@ -82,12 +82,15 @@
       </bt-row>
     </bt-panel>
     <bt-panel>
-      <bt-form :model="formModel" style="width: 500px;">
+      <bt-form :model="formModel" :rules="formRules">
         <bt-form-item label="Name" prop="name">
-          <bt-input slot-scope="{value}" v-model="value"></bt-input>
+          <bt-input slot-scope="{model}" v-model="model.name"></bt-input>
         </bt-form-item>
         <bt-form-item label="Age" prop="age">
-          <bt-input slot-scope="{value}" v-model="value"></bt-input>
+          <bt-input slot-scope="{model}" v-model="model.age"></bt-input>
+        </bt-form-item>
+        <bt-form-item>
+          <bt-button style="width: 100%;" type="info" @click="handleSubmit">Submit</bt-button>
         </bt-form-item>
       </bt-form>
     </bt-panel>
@@ -113,8 +116,21 @@ export default {
       ],
       formModel: createFormModel({
         name: 'Best',
-        age: 2
-      })
+        age: '2'
+      }),
+      formRules: {
+        name: [
+          { required: true, message: 'name required', trigger: 'blur' }
+        ],
+        age: [
+          { required: true, message: 'age required', trigger: 'blur' }
+        ]
+      }
+    }
+  },
+  methods: {
+    handleSubmit () {
+      this.formModel.validate()
     }
   }
 }
