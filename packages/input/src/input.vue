@@ -26,9 +26,13 @@
 </template>
 
 <script>
+import EmitterMixins from 'src/mixins/emitter'
+
 export default {
 
   name: 'BtInput',
+
+  mixins: [EmitterMixins],
 
   props: {
     type: {
@@ -48,6 +52,7 @@ export default {
 
     handleChange (event) {
       this.$emit('change', event.target.value)
+      this.dispatch('BtFormItem', 'field-change')
     },
 
     handleInput (event) {
@@ -56,6 +61,7 @@ export default {
 
     handleBlur (event) {
       this.$emit('blur', event)
+      this.dispatch('BtFormItem', 'field-blur')
     },
 
     handleFocus (event) {

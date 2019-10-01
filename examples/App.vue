@@ -120,7 +120,7 @@ export default {
       }),
       formRules: {
         name: [
-          { required: true, message: 'name required', trigger: 'blur' }
+          { required: true, message: 'name required' }
         ],
         age: [
           { required: true, message: 'age required', trigger: 'blur' }

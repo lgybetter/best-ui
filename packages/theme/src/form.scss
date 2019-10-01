@@ -21,4 +21,10 @@
   }
   @include e(inner) {
   }
+  @include e(error) {
+    display: inline-block;
+    font-size: $--font-size-small;
+    color: $--color-danger;
+    margin-top: 6px;
+  }
 }

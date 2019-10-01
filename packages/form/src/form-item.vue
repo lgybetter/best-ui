@@ -5,8 +5,14 @@
       {{label}}
     </label>
     <div class="bt-form-item__inner">
-      <slot :model="formModel.value" :value="fieldValue"></slot>
+      <slot :model="formModel.value"
+        :value="fieldValue">
+      </slot>
     </div>
+    <label v-show="isError"
+      class="bt-form-item__error">
+      {{errorMessage}}
+    </label>
   </div>
 </template>
 
@@ -29,6 +35,13 @@ export default {
 
   inject: ['formModel', 'formRules'],
 
+  data () {
+    return {
+      isError: false,
+      errorMessage: ''
+    }
+  },
+
   computed: {
     innerRules () {
       if (this.rules) {
@@ -47,14 +60,24 @@ export default {
   mounted () {
     if (this.prop && this.formModel) {
       this.formModel.addFields(this.prop, this)
+
+      this.initEvents()
     }
   },
 
   methods: {
 
-    validate (trigger = '', callback = function () {}) {
-      let rules = this.innerRules
+    initEvents () {
+      this.$on('field-blur', this.handleFieldBlur)
+      this.$on('field-change', this.handleFieldChagne)
+    },
 
+    getFilterField (trigger) {
+      return this.innerRules.filter(rule => rule.trigger && rule.trigger.indexOf(trigger) !== -1)
+    },
+
+    validate (trigger, callback = function () {}) {
+      let rules = trigger ? this.getFilterField(trigger) : this.innerRules
       if (!rules || rules.length === 0) {
         return callback()
       }
@@ -67,8 +90,22 @@ export default {
       model[this.prop] = this.fieldValue
 
       validator.validate(model, { firstFields: true }, errors => {
+        if (errors && errors.length) {
+          this.isError = true
+          this.errorMessage = errors[0].message
+        } else {
+          this.isError = false
+        }
         callback(errors)
       })
+    },
+
+    handleFieldBlur () {
+      this.validate('blur')
+    },
+
+    handleFieldChagne () {
+      this.validate('change')
     }
   }
 }
