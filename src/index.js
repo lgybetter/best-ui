@@ -38,5 +38,18 @@ const install = function (Vue, opts = {}) {
 
 export default {
   install,
-  Button
+  Button,
+  Input,
+  Select,
+  Option,
+  Table,
+  TableColumn,
+  Tag,
+  Panel,
+  Checkbox,
+  Radio,
+  Row,
+  Col,
+  Form,
+  FormItem
 }
