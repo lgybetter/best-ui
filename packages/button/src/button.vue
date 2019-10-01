@@ -53,7 +53,7 @@ export default {
 
   methods: {
     /**
-     * 点击事件
+     * Click 事件
      * 
      * @event click
      * @type {object}
