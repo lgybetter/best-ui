@@ -12,6 +12,7 @@ import Row from '~/row'
 import Col from '~/col'
 import Form from '~/form'
 import FormItem from '~/form-item'
+import Pagination from '~/pagination'
 
 const components = [
   Button,
@@ -27,7 +28,8 @@ const components = [
   Row,
   Col,
   Form,
-  FormItem
+  FormItem,
+  Pagination
 ]
 
 const install = function (Vue, opts = {}) {
@@ -51,5 +53,6 @@ export default {
   Row,
   Col,
   Form,
-  FormItem
+  FormItem,
+  Pagination
 }

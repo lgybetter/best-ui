@@ -53,6 +53,10 @@
           prop="city">
         </bt-table-column>
       </bt-table>
+      <bt-pagination :page.sync="page"
+        :page-size.sync="pageSize"
+        :total="1000">
+      </bt-pagination>
     </bt-panel>
     <bt-panel>
       <bt-tag icon="el-icon-close">open</bt-tag>
@@ -125,7 +129,9 @@ export default {
         age: [
           { required: true, message: 'age required', trigger: 'blur' }
         ]
-      }
+      },
+      page: 2,
+      pageSize: 5
     }
   },
   methods: {

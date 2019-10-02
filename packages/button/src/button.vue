@@ -54,7 +54,7 @@ export default {
   methods: {
     /**
      * Click 事件
-     * 
+     *
      * @event click
      * @type {object}
      */

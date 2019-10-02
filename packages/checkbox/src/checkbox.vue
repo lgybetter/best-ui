@@ -27,8 +27,8 @@ export default {
      * @model
      */
     value: {
-      type: String | Array,
-      default: ''
+      type: [Boolean, Array],
+      default: false
     }
   },
 
