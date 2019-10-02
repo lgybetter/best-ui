@@ -1,11 +1,21 @@
+/**
+ * Col 栅格布局列
+ * @displayName Best Col
+ */
 export default {
   name: 'BtCol',
 
   props: {
+    /**
+     * 栅格列Dom标签
+     */
     tag: {
       type: String,
       default: 'div'
     },
+    /**
+     * 栅格列占比 1 到 24
+     */
     span: {
       type: Number,
       default: 24
