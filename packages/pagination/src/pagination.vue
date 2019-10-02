@@ -74,17 +74,22 @@ export default {
       default: 0
     },
     pagerSize: {
-      type: Number,
-      default: 5
+      type: Number
     }
   },
 
   computed: {
+    innerPagerSize () {
+      if (this.pagerSize) {
+        return this.pagerSize
+      }
+      return this.defaultPagerSize
+    },
     pagerNum () {
       return parseInt(this.total / this.pageSize)
     },
     offset () {
-      return parseInt(this.pagerSize / 2)
+      return parseInt(this.innerPagerSize / 2)
     },
     showLeftOffset () {
       return this.page > this.offset + 1
@@ -99,17 +104,43 @@ export default {
       return this.page === this.pagerNum
     },
     pageList () {
-      const start = !this.showRightOffset ? this.pagerNum - this.pagerSize + 1 : this.showLeftOffset ? this.page - this.offset : 1
-      const end = !this.showLeftOffset ? this.pagerSize : this.showRightOffset ? this.page + this.offset : this.pagerNum
+      const start = !this.showRightOffset ? this.pagerNum - this.innerPagerSize + 1 : this.showLeftOffset ? this.page - this.offset : 1
+      const end = !this.showLeftOffset ? this.innerPagerSize : this.showRightOffset ? this.page + this.offset : this.pagerNum
       return Array.from(new Array(end + 1).keys()).slice(start)
     }
   },
 
   data () {
-    return {}
+    return {
+      defaultPagerSize: 5
+    }
+  },
+
+  mounted () {
+    this.initDefaultPagerSize()
+    this.initEvents()
   },
 
   methods: {
+    initEvents () {
+      window.addEventListener('resize', () => {
+        this.initDefaultPagerSize()
+      })
+    },
+    initDefaultPagerSize () {
+      const offsetWidth = document.body.offsetWidth
+      const itemWidth = 100
+      const pagerNum = parseInt(offsetWidth / itemWidth)
+      if (pagerNum > 10) {
+        this.defaultPagerSize = 10
+        return
+      }
+      if (pagerNum < 0) {
+        this.defaultPagerSize = 13
+        return
+      }
+      this.defaultPagerSize = pagerNum
+    },
     handlePagePre () {
       if (!this.leftDisabled) {
         this.$emit('update:page', this.page - 1)
