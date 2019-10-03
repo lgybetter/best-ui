@@ -1,11 +1,13 @@
 <template>
   <button
+  :disabled="disabled"
   type="button"
   :class="[
       'bt-button',
       type ? `bt-button--${type}` : '',
       {
-        'is-circle': circle
+        'is-circle': circle,
+        'is-disabled': disabled
       }
     ]"
   @click="handleClick">
@@ -48,6 +50,13 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    /**
+     * 是否禁用
+     */
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 

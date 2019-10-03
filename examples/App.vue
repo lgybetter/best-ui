@@ -6,12 +6,18 @@
       <bt-button type="info">Send Email</bt-button>
       <bt-button type="warn">Send Email</bt-button>
       <bt-button type="primary" circle icon="el-icon-plus"></bt-button>
+      <bt-button disabled type="primary">Send Email</bt-button>
     </bt-panel>
     <bt-panel>
       <bt-input placeholder="Enter something"></bt-input>
     </bt-panel>
     <bt-panel>
       <bt-input type="textarea"
+        placeholder="Enter something">
+      </bt-input>
+    </bt-panel>
+    <bt-panel>
+      <bt-input disabled
         placeholder="Enter something">
       </bt-input>
     </bt-panel>

@@ -4,9 +4,11 @@ export type ButtonType = 'default' | 'primary' | 'info' | 'warn'
 
 export declare class BTButton extends BestUIComponent {
 
-  type: ButtonType
+  type?: ButtonType
 
-  circle: boolean
+  circle?: boolean
   
-  icon: string
+  icon?: string
+
+  disabled?: boolean
 }

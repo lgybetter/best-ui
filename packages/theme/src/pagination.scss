@@ -10,6 +10,14 @@
 
   @include e(wrapper) {
     display: inline-block;
+    .btn-pre, .btn-next {
+      @include when(disabled) {
+        cursor: not-allowed;
+        &:hover {
+          color: $--pagination-page-button-background-color;
+        }
+      }
+    }
     .btn-pre, .btn-next, .btn-pager-pre, .btn-pager-next {
       font-size: 18px;
       color: $--pagination-page-button-background-color;

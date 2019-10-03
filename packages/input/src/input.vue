@@ -3,9 +3,13 @@
     isTextArea ? 'bt-textarea' : 'bt-input'
   ]">
   <template v-if="!isTextArea">
-    <input class="bt-input__inner"
+    <input :class="[
+        'bt-input__inner',
+        {'is-disabled': disabled}
+      ]"
       v-bind="$attrs"
       :readonly="readonly"
+      :disabled="disabled"
       @click="handleClick"
       @blur="handleBlur"
       @focus="handleFocus"
@@ -16,6 +20,7 @@
     class="bt-textarea__inner"
     v-bind="$attrs"
     :readonly="readonly"
+    :disabled="disabled"
     @click="handleClick"
     @blur="handleBlur"
     @focus="handleFocus"
@@ -35,7 +40,14 @@ export default {
       type: String,
       default: 'text'
     },
-    readonly: Boolean
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
 
   computed: {

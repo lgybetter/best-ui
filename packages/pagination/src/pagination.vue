@@ -4,7 +4,7 @@
       <ul class="bt-pager">
         <button
           type="button"
-          class="btn-pre"
+          :class="['btn-pre', {'is-disabled': leftDisabled}]"
           @click="handlePagePre">
           <i class="el-icon-arrow-left"></i>
         </button>
@@ -47,7 +47,7 @@
         </template>
         <button
           type="button"
-          class="btn-next"
+          :class="['btn-next', {'is-disabled': rightDisabled}]"
           @click="handlePageNext">
           <i class="el-icon-arrow-right"></i>
         </button>
