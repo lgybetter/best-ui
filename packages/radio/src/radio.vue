@@ -1,11 +1,12 @@
 <template>
-  <label class="bt-radio">
+  <label :class="['bt-radio', {'is-disabled': disabled}]">
     <span class="bt-radio__input">
       <span :class="['bt-radio__inner', {'is-actived': isActived}]"></span>
       <input class="bt-radio__original"
         type="radio"
         :value="label"
         v-model="innerValue"
+        :disabled="disabled"
         @change="handleChange"/>
     </span>
     <span class="bt-radio__label" v-if="$slots.default">
@@ -20,7 +21,11 @@ export default {
 
   props: {
     value: {},
-    label: {}
+    label: {},
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
 
   computed: {

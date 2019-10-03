@@ -16,6 +16,14 @@
     margin-left: 20px;
   }
 
+  @include when(disabled) {
+    cursor: not-allowed;
+
+    @include e(label) {
+      color: $--color-text-placeholder;
+    }
+  }
+
   @include e(input) {
     display: inline-block;
     font-size: 0;

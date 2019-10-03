@@ -41,6 +41,19 @@
       </bt-select>
     </bt-panel>
     <bt-panel>
+      <bt-select v-model="select" disabled>
+        <bt-option :value="0"
+          label="Vue">
+        </bt-option>
+        <bt-option :value="1"
+          label="React">
+        </bt-option>
+        <bt-option :value="2"
+          label="Angular">
+        </bt-option>
+      </bt-select>
+    </bt-panel>
+    <bt-panel>
       <bt-table :data="list">
         <bt-table-column
           label="Name"
@@ -72,11 +85,13 @@
     </bt-panel>
     <bt-panel>
       <bt-checkbox v-model="checked">React</bt-checkbox>
-      <bt-checkbox v-model="check">Vue</bt-checkbox>
+      <bt-checkbox v-model="check1">Vue</bt-checkbox>
+      <bt-checkbox v-model="check2" disabled>Angular</bt-checkbox>
     </bt-panel>
     <bt-panel>
       <bt-radio v-model="radio" :label="1">React</bt-radio>
       <bt-radio v-model="radio" :label="2">Vue</bt-radio>
+      <bt-radio v-model="radio" :label="3" disabled>Angular</bt-radio>
     </bt-panel>
     <bt-panel>
       <bt-row>
@@ -115,7 +130,8 @@ export default {
   name: 'app',
   data () {
     return {
-      check: false,
+      check1: false,
+      check2: false,
       checked: true,
       radio: 1,
       select: 0,
