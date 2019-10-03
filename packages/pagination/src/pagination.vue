@@ -144,25 +144,30 @@ export default {
     handlePagePre () {
       if (!this.leftDisabled) {
         this.$emit('update:page', this.page - 1)
+        this.$emit('pageChange', this.page - 1)
       }
     },
     handlePageNext () {
       if (!this.rightDisabled) {
         this.$emit('update:page', this.page + 1)
+        this.$emit('pageChange', this.page + 1)
       }
     },
     handlePagerPre () {
       if (this.showLeftOffset) {
         this.$emit('update:page', this.page - this.offset)
+        this.$emit('pageChange', this.page - this.offset)
       }
     },
     handlePagerNext () {
       if (this.showRightOffset) {
         this.$emit('update:page', this.page + this.offset)
+        this.$emit('pageChange', this.page + this.offset)
       }
     },
     handleNumberClick (page) {
       this.$emit('update:page', page)
+      this.$emit('pageChange', page)
     }
   }
 }

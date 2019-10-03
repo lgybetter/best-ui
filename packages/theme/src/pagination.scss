@@ -19,7 +19,7 @@
       }
     }
     .btn-pre, .btn-next, .btn-pager-pre, .btn-pager-next {
-      font-size: 18px;
+      font-size: $--font-size-large;
       color: $--pagination-page-button-background-color;
       cursor: pointer;
       &:hover {
