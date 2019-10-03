@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+
+@include b(pagination) {
+
+  text-align: center;
+  padding: 20px 0;
+  transition: all .1s;
+
+  @include e(wrapper) {
+    display: inline-block;
+    .btn-pre, .btn-next {
+      @include when(disabled) {
+        cursor: not-allowed;
+        &:hover {
+          color: $--pagination-page-button-background-color;
+        }
+      }
+    }
+    .btn-pre, .btn-next, .btn-pager-pre, .btn-pager-next {
+      font-size: $--font-size-large;
+      color: $--pagination-page-button-background-color;
+      cursor: pointer;
+      &:hover {
+        color: $--color-primary;
+      }
+    }
+  }
+
+}
+
+@include b(pager) {
+  display: inline-block;
+
+  @include e(number) {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    padding: 0 12px;
+    color: $--color-text-regular;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      color: $--color-primary;
+    }
+
+    @include when(actived) {
+      color: $--color-primary;
+      font-weight: $--font-weigth-bold;
+    }
+  }
+}

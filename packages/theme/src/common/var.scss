@@ -12,6 +12,7 @@ $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
 $--font-size-extra-small: 12px !default;
 $--font-weight-primary: 500 !default;
+$--font-weigth-bold: 700 !default;
 
 /* ZIndex */
 $--index-normal: 1 !default;
@@ -172,3 +173,6 @@ $--checkbox-border-radius: $--border-radius-base !default;
 /* Radio */
 $--radio-size: 18px;
 $--radio-background-color: $--color-label !default;
+
+/* Pagination */
+$--pagination-page-button-background-color: $--color-text-regular;

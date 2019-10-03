@@ -1,6 +1,7 @@
 <template>
   <div class="bt-select">
     <bt-input
+      :disabled="disabled"
       :value="label"
       :readonly="readonly"
       @click.stop="handleClick"
@@ -31,6 +32,10 @@ export default {
   props: {
     value: {
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 

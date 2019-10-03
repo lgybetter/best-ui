@@ -6,12 +6,18 @@
       <bt-button type="info">Send Email</bt-button>
       <bt-button type="warn">Send Email</bt-button>
       <bt-button type="primary" circle icon="el-icon-plus"></bt-button>
+      <bt-button disabled type="primary">Send Email</bt-button>
     </bt-panel>
     <bt-panel>
       <bt-input placeholder="Enter something"></bt-input>
     </bt-panel>
     <bt-panel>
       <bt-input type="textarea"
+        placeholder="Enter something">
+      </bt-input>
+    </bt-panel>
+    <bt-panel>
+      <bt-input disabled
         placeholder="Enter something">
       </bt-input>
     </bt-panel>
@@ -23,6 +29,19 @@
     </bt-panel>
     <bt-panel>
       <bt-select v-model="select">
+        <bt-option :value="0"
+          label="Vue">
+        </bt-option>
+        <bt-option :value="1"
+          label="React">
+        </bt-option>
+        <bt-option :value="2"
+          label="Angular">
+        </bt-option>
+      </bt-select>
+    </bt-panel>
+    <bt-panel>
+      <bt-select v-model="select" disabled>
         <bt-option :value="0"
           label="Vue">
         </bt-option>
@@ -53,6 +72,10 @@
           prop="city">
         </bt-table-column>
       </bt-table>
+      <bt-pagination :page.sync="page"
+        :page-size.sync="pageSize"
+        :total="1000">
+      </bt-pagination>
     </bt-panel>
     <bt-panel>
       <bt-tag icon="el-icon-close">open</bt-tag>
@@ -62,11 +85,13 @@
     </bt-panel>
     <bt-panel>
       <bt-checkbox v-model="checked">React</bt-checkbox>
-      <bt-checkbox v-model="check">Vue</bt-checkbox>
+      <bt-checkbox v-model="check1">Vue</bt-checkbox>
+      <bt-checkbox v-model="check2" disabled>Angular</bt-checkbox>
     </bt-panel>
     <bt-panel>
       <bt-radio v-model="radio" :label="1">React</bt-radio>
       <bt-radio v-model="radio" :label="2">Vue</bt-radio>
+      <bt-radio v-model="radio" :label="3" disabled>Angular</bt-radio>
     </bt-panel>
     <bt-panel>
       <bt-row>
@@ -105,7 +130,8 @@ export default {
   name: 'app',
   data () {
     return {
-      check: false,
+      check1: false,
+      check2: false,
       checked: true,
       radio: 1,
       select: 0,
@@ -125,7 +151,9 @@ export default {
         age: [
           { required: true, message: 'age required', trigger: 'blur' }
         ]
-      }
+      },
+      page: 2,
+      pageSize: 5
     }
   },
   methods: {

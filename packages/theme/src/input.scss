@@ -7,7 +7,6 @@
   display: inline-block;
   width: 100%;
   font-size: $--font-size-base;
-
   @include e(inner) {
     display: block;
     width: 100%;
@@ -35,6 +34,10 @@
       border-color: $--input-focus-border;
     }
 
+    &.is-disabled {
+      cursor: not-allowed;
+      border: $--input-border;
+    }
   }
 }
 
@@ -44,7 +47,6 @@
   width: 100%;
   vertical-align: bottom;
   font-size: $--font-size-base;
-
   @include e(inner) {
     display: block;
     resize: vertical;
@@ -74,5 +76,9 @@
       border-color: $--input-focus-border;
     }
 
+    &.is-disabled {
+      cursor: not-allowed;
+      border: $--input-border;
+    }
   }
 }

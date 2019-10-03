@@ -42,6 +42,7 @@
       color: $--color-white;
       background-color: mix($background-color, $--color-white);
       border-color: mix($border-color, $--color-white);
+      cursor: not-allowed;
     }
   }
 }
