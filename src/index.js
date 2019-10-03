@@ -13,6 +13,7 @@ import Col from '~/col'
 import Form from '~/form'
 import FormItem from '~/form-item'
 import Pagination from '~/pagination'
+import Calendar from '~/calendar'
 
 const components = [
   Button,
@@ -29,7 +30,8 @@ const components = [
   Col,
   Form,
   FormItem,
-  Pagination
+  Pagination,
+  Calendar
 ]
 
 const install = function (Vue, opts = {}) {
@@ -54,5 +56,6 @@ export default {
   Col,
   Form,
   FormItem,
-  Pagination
+  Pagination,
+  Calendar
 }

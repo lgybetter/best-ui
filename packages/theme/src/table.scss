@@ -16,6 +16,14 @@
     padding: $--medium-padding-vertical $--default-padding-horizontal;
   }
 
+  th {
+    font-size: $--font-size-medium;
+  }
+
+  td {
+    font-size: $--font-size-base;
+  }
+
   tr {
     transition: $--all-transition;
   }

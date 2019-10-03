@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(calendar) {
+  display: inline-block;
+  @include e(inner) {
+    > tr {
+      th, td {
+        text-align: center;
+        font-size: $--font-size-base;
+        padding: 8px;
+        color: $--color-text-regular;
+        span {
+          display: inline-block;
+          line-height: 26px;
+          width: 26px;
+          height: 26px;
+        }
+      }
+      th {
+        color: $--color-text-tip;
+        font-weight: $--font-weigth-bold;
+      }
+      td {
+        span {
+          @include when(disabled) {
+            color: $--color-text-placeholder;
+          }
+          @include when(actived) {
+            color: $--color-white;
+            background-color: $--color-primary;
+            border-radius: $--border-radius-circle;
+          }
+        }
+      }
+    } 
+  }
+}

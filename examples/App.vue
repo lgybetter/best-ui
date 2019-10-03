@@ -119,6 +119,10 @@
         </bt-form-item>
       </bt-form>
     </bt-panel>
+    <bt-panel>
+      <bt-calendar>
+      </bt-calendar>
+    </bt-panel>
   </div>
 </template>
 
