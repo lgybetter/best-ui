@@ -120,7 +120,7 @@
       </bt-form>
     </bt-panel>
     <bt-panel>
-      <bt-calendar>
+      <bt-calendar v-model="currentTime">
       </bt-calendar>
     </bt-panel>
   </div>
@@ -157,7 +157,8 @@ export default {
         ]
       },
       page: 2,
-      pageSize: 5
+      pageSize: 5,
+      currentTime: new Date()
     }
   },
   methods: {
