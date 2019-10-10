@@ -18,29 +18,21 @@
         </button>
       </div>
     </div>
-    <table class="bt-calendar__inner">
-      <tr>
-        <th v-for="(week, index) in weeks" :key="index">
-          <span>{{week}}</span>
-        </th>
-      </tr>
-      <tr v-for="(weekItem, index) in weekNum" :key="index">
-        <td v-for="(dayItem, index) in days.slice(index * 7, ((index + 1) * 7 > days.length ? day.length : (index + 1) * 7))"
-          :key="index"
-          @click="handleDayChange(dayItem)">
-          <span :class="[
-            {'is-disabled': dayItem.disabled},
-            {'is-actived': (dayItem.dayNum === day) && (!dayItem.disabled)}
-          ]">
-            {{dayItem.dayNum}}
-          </span>
-        </td>
-      </tr>
-    </table>
+    <bt-day-picker
+      :weeks="weeks"
+      :weekNum="weekNum"
+      :days="days"
+      :day="day"
+      @day-change="handleDayChange">
+    </bt-day-picker>
+    <bt-month-picker>
+    </bt-month-picker>
   </div>
 </template>
 
 <script>
+import BtDayPicker from './day-picker'
+import BtMonthPicker from './month-picker'
 
 // 闰年
 const monthLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -73,6 +65,11 @@ const weeksName = () => {
 }
 export default {
   name: 'BtCalendar',
+
+  components: {
+    BtDayPicker,
+    BtMonthPicker
+  },
 
   props: {
     value: {

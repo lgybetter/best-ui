@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import { generateArray } from 'src/utils/data'
+
 export default {
   name: 'BtPagination',
 
@@ -106,7 +108,7 @@ export default {
     pageList () {
       const start = !this.showRightOffset ? this.pagerNum - this.innerPagerSize + 1 : this.showLeftOffset ? this.page - this.offset : 1
       const end = !this.showLeftOffset ? this.innerPagerSize : this.showRightOffset ? this.page + this.offset : this.pagerNum
-      return Array.from(new Array(end + 1).keys()).slice(start)
+      return generateArray(start, end)
     }
   },
 

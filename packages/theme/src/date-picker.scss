@@ -41,7 +41,8 @@
       margin-left: 8px;
     }
   }
-  @include e(inner) {
+  @include e(day) {
+    width: 100%;
     > tr {
       th, td {
         text-align: center;
@@ -62,10 +63,10 @@
       td {
         span {
           transition: all .1s;
+          cursor: pointer;
           &:hover {
             color: $--color-primary;
           }
-          cursor: pointer;
           @include when(disabled) {
             color: $--color-label;
             cursor: not-allowed;
@@ -83,6 +84,45 @@
       }
       td:last-child, th:last-child {
         padding-right: 0;
+      }
+    }
+  }
+  @include e(month) {
+    width: 100%;
+    > tr {
+      td {
+        min-width: 92px;
+        text-align: center;
+        font-size: $--font-size-base;
+        padding: 4px 8px;
+        color: $--color-text-regular;
+        span {
+          display: inline-block;
+          line-height: 26px;
+          width: 26px;
+          height: 26px;
+          transition: all .1s;
+          cursor: pointer;
+          &:hover {
+            color: $--color-primary;
+          }
+          @include when(disabled) {
+            color: $--color-label;
+            cursor: not-allowed;
+          }
+          @include when(actived) {
+            color: $--color-white;
+            background-color: $--color-primary;
+            border-radius: $--border-radius-circle;
+          }
+        }
+      }
+      td:first-child, th:first-child {
+        text-align: left;
+        padding-left: 0;
+      }
+      td:last-child, th:last-child {
+        text-align: right;
       }
     } 
   }
