@@ -1,8 +1,8 @@
 <template>
   <div class="bt-calendar bt-panel">
     <div class="bt-calendar__bar">
-      <label class="bt-calendar__label">{{year}}</label>
-      <label class="bt-calendar__label">{{monthName}}</label>
+      <label class="bt-calendar__label" @click="handleShowSelector('showYear')">{{year}}</label>
+      <label class="bt-calendar__label" @click="handleShowSelector('showMonth')">{{monthName}}</label>
       <div class="bt-calendar__pager">
         <button
           type="button"
@@ -19,20 +19,30 @@
       </div>
     </div>
     <bt-day-picker
+      v-show="showDay"
       :weeks="weeks"
       :weekNum="weekNum"
       :days="days"
       :day="day"
       @day-change="handleDayChange">
     </bt-day-picker>
-    <bt-month-picker>
+    <bt-month-picker
+      v-show="showMonth"
+      :month="month"
+      @month-change="handleMonthChange">
     </bt-month-picker>
+    <bt-year-picker
+      v-show="showYear"
+      :year="year"
+      @year-change="handleYearChange">
+    </bt-year-picker>
   </div>
 </template>
 
 <script>
 import BtDayPicker from './day-picker'
 import BtMonthPicker from './month-picker'
+import BtYearPicker from './year-picker'
 
 // 闰年
 const monthLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -52,11 +62,6 @@ const monthsName = (month) => {
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
   ][month]
 }
-// const monthsShortName = () => {
-//   return [
-//     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-//   ]
-// }
 
 const weeksName = () => {
   return [
@@ -68,7 +73,8 @@ export default {
 
   components: {
     BtDayPicker,
-    BtMonthPicker
+    BtMonthPicker,
+    BtYearPicker
   },
 
   props: {
@@ -153,7 +159,10 @@ export default {
     return {
       day: 0,
       year: 0,
-      month: 0
+      month: 0,
+      showDay: true,
+      showMonth: false,
+      showYear: false
     }
   },
 
@@ -164,7 +173,19 @@ export default {
       }
       this.day = item.dayNum
     },
+    handleMonthChange (month) {
+      this.month = month
+      this.handleShowSelector('showDay')
+    },
+    handleYearChange (year) {
+      this.year = year
+      this.handleShowSelector('showDay')
+    },
     handleMonthPre () {
+      if (this.showYear) {
+        this.year--
+        return
+      }
       if (this.month === 0) {
         this.month = 11
         this.year--
@@ -173,12 +194,22 @@ export default {
       this.month--
     },
     handleMonthNext () {
+      if (this.showYear) {
+        this.year++
+        return
+      }
       if (this.month === 11) {
         this.month = 0
         this.year++
         return
       }
       this.month++
+    },
+    handleShowSelector (key) {
+      this.showMonth = false
+      this.showDay = false
+      this.showYear = false
+      this[key] = true
     }
   }
 }
