@@ -119,8 +119,10 @@
         </bt-form-item>
       </bt-form>
     </bt-panel>
-    <bt-calendar v-model="currentTime">
-    </bt-calendar>
+    <bt-panel>
+      <bt-date-picker>
+      </bt-date-picker>
+    </bt-panel>
   </div>
 </template>
 

@@ -132,3 +132,13 @@
     @include year-month-table;
   }
 }
+
+@include b(date-picker) {
+  position: relative;
+  .bt-calendar {
+    position: absolute;
+    left: 0;
+    top: 48px;
+    margin-bottom: 10px;
+  }
+}

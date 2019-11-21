@@ -14,6 +14,7 @@ import Form from '~/form'
 import FormItem from '~/form-item'
 import Pagination from '~/pagination'
 import Calendar from '~/calendar'
+import DatePicker from '~/date-picker'
 
 const components = [
   Button,
@@ -31,7 +32,8 @@ const components = [
   Form,
   FormItem,
   Pagination,
-  Calendar
+  Calendar,
+  DatePicker
 ]
 
 const install = function (Vue, opts = {}) {
@@ -57,5 +59,6 @@ export default {
   Form,
   FormItem,
   Pagination,
-  Calendar
+  Calendar,
+  DatePicker
 }
