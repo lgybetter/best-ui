@@ -2,11 +2,14 @@
   <div class="bt-date-picker" id="datePcker">
     <bt-input
       :disabled="disabled"
-      :value="label"
-      @focus="handleFocus">
+      :value="displayDate"
+      @focus="handleFocus"
+      readonly>
     </bt-input>
     <bt-calendar
-      v-show="showCalendar">
+      v-show="showCalendar"
+      :value="value"
+      v-on="$listeners">
     </bt-calendar>
   </div>
 </template>
@@ -15,6 +18,8 @@
 import { createOutClickListener } from 'src/utils/dom'
 import BtInput from '~/input'
 import BtCalendar from '~/calendar'
+import { dateFormat } from 'src/utils/date'
+const format = 'yyyy-MM-dd'
 
 export default {
 
@@ -27,11 +32,20 @@ export default {
 
   props: {
     value: {
-      required: true
+      required: true,
+      type: Date
     },
     disabled: {
       type: Boolean,
-      default: false
+      default () {
+        return false
+      }
+    }
+  },
+
+  computed: {
+    displayDate () {
+      return dateFormat(this.value, format)
     }
   },
 
