@@ -1,5 +1,5 @@
 <template>
-  <div class="bt-date-picker" id="datePcker">
+  <div class="bt-date-picker" :id="id">
     <bt-input
       :disabled="disabled"
       :value="displayDate"
@@ -19,6 +19,7 @@ import { createOutClickListener } from 'src/utils/dom'
 import BtInput from '~/input'
 import BtCalendar from '~/calendar'
 import { dateFormat } from 'src/utils/date'
+import { genUUID } from 'src/utils/uuid'
 const format = 'yyyy-MM-dd'
 
 export default {
@@ -51,12 +52,13 @@ export default {
 
   data () {
     return {
-      showCalendar: false
+      showCalendar: false,
+      id: genUUID()
     }
   },
 
   mounted () {
-    this.outClickListener = createOutClickListener('#datePcker', () => {
+    this.outClickListener = createOutClickListener(`#${this.id}`, () => {
       this.showCalendar = false
     })
     document.addEventListener('click', this.outClickListener)
