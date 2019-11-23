@@ -3,11 +3,12 @@
     <bt-input
       :disabled="disabled"
       :value="displayDate"
-      @focus="handleFocus"
+      @click.stop="handleClick"
       readonly>
     </bt-input>
+    <i :class="['el-icon-date', {'is-reverse': visible}]"></i>
     <bt-calendar
-      v-show="showCalendar"
+      v-show="visible"
       :value="value"
       v-on="$listeners">
     </bt-calendar>
@@ -15,11 +16,11 @@
 </template>
 
 <script>
-import { createOutClickListener } from 'src/utils/dom'
 import BtInput from '~/input'
 import BtCalendar from '~/calendar'
 import { dateFormat } from 'src/utils/date'
 import { genUUID } from 'src/utils/uuid'
+import { createOutClickListener } from 'src/utils/dom'
 const format = 'yyyy-MM-dd'
 
 export default {
@@ -52,21 +53,21 @@ export default {
 
   data () {
     return {
-      showCalendar: false,
+      visible: false,
       id: genUUID()
     }
   },
 
   mounted () {
     this.outClickListener = createOutClickListener(`#${this.id}`, () => {
-      this.showCalendar = false
+      this.visible = false
     })
     document.addEventListener('click', this.outClickListener)
   },
 
   methods: {
-    handleFocus () {
-      this.showCalendar = true
+    handleClick () {
+      this.visible = !this.visible
     }
   }
 

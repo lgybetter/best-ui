@@ -120,9 +120,13 @@
       </bt-form>
     </bt-panel>
     <bt-panel>
-      <bt-date-picker
-        v-model="currentTime">
-      </bt-date-picker>
+      <bt-row>
+        <bt-col :span="8">
+          <bt-date-picker
+            v-model="currentTime">
+          </bt-date-picker>
+        </bt-col>
+      </bt-row>
     </bt-panel>
   </div>
 </template>

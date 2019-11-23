@@ -1,12 +1,10 @@
 <template>
-  <div class="bt-select">
+  <div class="bt-select" :id="id">
     <bt-input
       :disabled="disabled"
       :value="label"
       :readonly="readonly"
-      @click.stop="handleClick"
-      @blur="handleBlur"
-      @focus="handleFocus">
+      @click.stop="handleClick">
     </bt-input>
     <i :class="['el-icon-arrow-up', {'is-reverse': visible}]"></i>
     <bt-select-dropdown
@@ -19,6 +17,8 @@
 <script>
 import BtInput from '~/input'
 import BtSelectDropdown from './select-dropdown'
+import { genUUID } from 'src/utils/uuid'
+import { createOutClickListener } from 'src/utils/dom'
 
 export default {
 
@@ -54,8 +54,16 @@ export default {
   data () {
     return {
       label: '',
-      visible: false
+      visible: false,
+      id: genUUID()
     }
+  },
+
+  mounted () {
+    this.outClickListener = createOutClickListener(`#${this.id}`, () => {
+      this.visible = false
+    })
+    document.addEventListener('click', this.outClickListener)
   },
 
   methods: {
@@ -66,15 +74,6 @@ export default {
 
     handleClick () {
       this.visible = !this.visible
-    },
-
-    handleFocus () {
-    },
-
-    handleBlur () {
-      setTimeout(() => {
-        this.visible = false
-      }, 200)
     }
   }
 }

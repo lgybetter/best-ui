@@ -141,4 +141,23 @@
     top: 48px;
     margin-bottom: 10px;
   }
+  .bt-input {
+    .bt-input__inner {
+      padding-left: 50px;
+      cursor: pointer;
+    }
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    margin-top: -10px;
+    font-size: $--font-size-large;
+    color: $--color-text-regular;
+  }
+  &:hover {
+    i {
+      color: $--color-primary;
+    }
+  }
 }
