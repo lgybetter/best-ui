@@ -69,6 +69,7 @@ export default {
   methods: {
     handleSelected ({ value, label }) {
       this.label = label
+      this.visible = false
       this.$emit('input', value)
     },
 
