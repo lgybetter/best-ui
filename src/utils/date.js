@@ -67,7 +67,7 @@ export function isObject (o) {
 * @returns
 */
 export function isEmptyObject (o) {
-  for (let p in o) { return !1 }
+  for (const p in o) { return !1 }
   return !0
 }
 

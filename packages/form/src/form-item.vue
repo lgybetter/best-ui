@@ -77,16 +77,16 @@ export default {
     },
 
     validate (trigger, callback = function () {}) {
-      let rules = trigger ? this.getFilterField(trigger) : this.innerRules
+      const rules = trigger ? this.getFilterField(trigger) : this.innerRules
       if (!rules || rules.length === 0) {
         return callback()
       }
 
-      let descriptor = {}
+      const descriptor = {}
       descriptor[this.prop] = rules
 
       const validator = new AsyncValidator(descriptor)
-      let model = {}
+      const model = {}
       model[this.prop] = this.fieldValue
 
       validator.validate(model, { firstFields: true }, errors => {

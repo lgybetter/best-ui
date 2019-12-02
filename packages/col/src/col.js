@@ -34,7 +34,7 @@ export default {
   },
 
   render (h) {
-    let classList = [];
+    const classList = [];
     ['span'].forEach(prop => {
       classList.push(
         prop !== 'span'

@@ -54,7 +54,7 @@ export default {
         return
       }
       const defaultSlot = this.$slots.default
-      this.columns = defaultSlot.map(({ componentInstance }) => {
+      this.columns = defaultSlot.filter(({ componentInstance }) => componentInstance).map(({ componentInstance }) => {
         return componentInstance
       })
     }

@@ -111,8 +111,8 @@ export default {
       return monthsName(this.month)
     },
     days () {
-      let days = []
-      let firstDay = this.firstDay === 0 ? 7 : this.firstDay
+      const days = []
+      const firstDay = this.firstDay === 0 ? 7 : this.firstDay
       for (let i = 1; i < firstDay; i++) {
         let lastMonth = this.month - 1
         let year = this.year
@@ -149,8 +149,8 @@ export default {
       return weeksName()
     },
     weekNum () {
-      let remainder = this.days.length % 7
-      let num = parseInt(this.days.length / 7)
+      const remainder = this.days.length % 7
+      const num = parseInt(this.days.length / 7)
       return remainder > 0 ? num + 1 : num
     }
   },

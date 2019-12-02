@@ -29,7 +29,7 @@ export default {
   computed: {
     years () {
       let start = this.year - 4
-      let end = this.year + 4
+      const end = this.year + 4
       start = start < 1995 ? 1995 : start
       return generateArray(start, end)
     }
