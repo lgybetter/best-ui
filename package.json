@@ -6,7 +6,8 @@
     "watch": "node ./build/bin/watch.js",
     "build:component": "node ./build/bin/build-component.js",
     "build": "node ./build/bin/build.js",
-    "lint": "eslint --fix --ext .js,.vue src"
+    "build:all": "npm run build & npm run build:component",
+    "lint": "eslint --fix --ext .js,.vue src packages"
   },
   "dependencies": {
     "async-validator": "^3.1.0",
