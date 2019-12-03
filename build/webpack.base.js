@@ -3,14 +3,15 @@ const os = require('os')
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
 const { VueLoaderPlugin } = require('vue-loader')
 const { resolve } = require('./utils/resolve')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 module.exports = {
   resolve: {
     extensions: ['.vue', '.js', '.json'],
     alias: {
-      '@': resolve('examples'),
-      '~': resolve('packages'),
-      src: resolve('src')
+      '@': resolve(process.cwd(), 'examples'),
+      '~': resolve(process.cwd(), 'packages'),
+      src: resolve(process.cwd(), 'src')
     }
   },
   module: {
@@ -74,6 +75,7 @@ module.exports = {
       verbose: false,
       threadPool: happyThreadPool
     }),
+    new ProgressBarPlugin(),
     new VueLoaderPlugin()
   ]
 }

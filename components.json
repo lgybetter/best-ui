@@ -1,0 +1,19 @@
+{
+  "button": "./packages/button",
+  "calendar": "./packages/calendar",
+  "checkbox": "./packages/checkbox",
+  "col": "./packages/col",
+  "date-picker": "./packages/date-picker",
+  "form": "./packages/form",
+  "form-item": "./packages/form-item",
+  "input": "./packages/input",
+  "option": "./packages/option",
+  "pagination": "./packages/pagination",
+  "panel": "./packages/panel",
+  "radio": "./packages/radio",
+  "row": "./packages/row",
+  "select": "./packages/select",
+  "table": "./packages/table",
+  "table-column": "./packages/table-column",
+  "tag": "./packages/tag"
+}

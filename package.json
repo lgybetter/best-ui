@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "watch": "node ./build/bin/watch.js",
-    "dist": "node ./build/bin/dist.js",
+    "build:component": "node ./build/bin/build-component.js",
+    "build": "node ./build/bin/build.js",
     "lint": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "@vue/eslint-config-standard": "^5.0.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.1",
     "eslint": "^5.16.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -35,6 +37,7 @@
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.7",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "sass": "^1.18.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.1",
