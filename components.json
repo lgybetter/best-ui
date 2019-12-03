@@ -15,5 +15,6 @@
   "select": "./packages/select",
   "table": "./packages/table",
   "table-column": "./packages/table-column",
-  "tag": "./packages/tag"
+  "tag": "./packages/tag",
+  "best-ui.common": "./src"
 }

@@ -10,12 +10,9 @@ const config = merge(baseConf, {
   output: {
     path: resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
-    filename: 'best-ui.js',
+    filename: 'index.js',
     library: 'BEST',
     libraryTarget: 'umd'
-  },
-  optimization: {
-    minimize: false
   },
   performance: {
     hints: false
