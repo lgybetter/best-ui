@@ -1,0 +1,39 @@
+@import "../common/var";
+
+@mixin year-month-table {
+  width: 100%;
+  > tr {
+    td {
+      min-width: 92px;
+      text-align: center;
+      font-size: $--font-size-base;
+      padding: 4px 8px;
+      color: $--color-text-regular;
+      span {
+        display: inline-block;
+        line-height: 26px;
+        width: 26px;
+        height: 26px;
+        transition: all .1s;
+        cursor: pointer;
+        &:hover {
+          color: $--color-primary;
+        }
+        @include when(disabled) {
+          color: $--color-label;
+          cursor: not-allowed;
+        }
+        @include when(actived) {
+          color: $--color-primary;
+        }
+      }
+    }
+    td:first-child, th:first-child {
+      text-align: left;
+      padding-left: 0;
+    }
+    td:last-child, th:last-child {
+      text-align: right;
+    }
+  } 
+}

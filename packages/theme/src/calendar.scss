@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+@import "mixins/year-month-table";
+
+@include b(calendar) {
+  display: inline-block;
+  @include e(bar) {
+    margin-bottom: 10px;
+    @include utils-clearfix;
+  }
+  @include e(label) {
+    float: left;
+    font-size: $--font-size-medium;
+    font-weight: $--font-weigth-bold;
+    color: $--color-label;
+    margin-right: 10px;
+    transition: all .1s;
+    &:hover {
+      color: $--color-primary;
+      cursor: pointer;
+    }
+  }
+  @include e(pager) {
+    float: right;
+    font-size: $--font-size-large;
+    color: $--color-text-placeholder;
+    .btn-pre, .btn-next {
+      cursor: pointer;
+      transition: all .1s;
+      i {
+        background-color: $--background-color-base;
+        border-radius: $--border-radius-circle;
+        padding: 2px;
+      }
+      &:hover {
+        color: $--color-text-tip;
+      }
+    }
+    .btn-next {
+      margin-left: 8px;
+    }
+  }
+  @include e(day) {
+    width: 100%;
+    > tr {
+      th, td {
+        text-align: center;
+        font-size: $--font-size-base;
+        padding: 4px 8px;
+        color: $--color-text-regular;
+        span {
+          display: inline-block;
+          line-height: 26px;
+          width: 26px;
+          height: 26px;
+        }
+      }
+      th {
+        color: $--color-text-tip;
+        font-weight: $--font-weigth-bold;
+      }
+      td {
+        span {
+          transition: all .1s;
+          cursor: pointer;
+          &:hover {
+            color: $--color-primary;
+          }
+          @include when(disabled) {
+            color: $--color-label;
+            cursor: not-allowed;
+          }
+          @include when(actived) {
+            color: $--color-white;
+            background-color: $--color-primary;
+            border-radius: $--border-radius-circle;
+          }
+
+        }
+      }
+      td:first-child, th:first-child {
+        padding-left: 0;
+      }
+      td:last-child, th:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  @include e(month) {
+    @include year-month-table;
+  }
+  @include e(year) {
+    @include year-month-table;
+  }
+}

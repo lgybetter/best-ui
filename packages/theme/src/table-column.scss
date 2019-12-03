@@ -3,6 +3,5 @@
 @import "mixins/mixins";
 @import "mixins/utils";
 
-@include b(form) {
-
+@include b(table-column) {
 }
