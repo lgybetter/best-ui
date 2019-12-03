@@ -1,5 +1,5 @@
 const path = require('path')
 
-exports.resolve = dir => {
-  return path.resolve(dir)
+exports.resolve = function () {
+  return path.resolve(...arguments)
 }

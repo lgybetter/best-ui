@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "node ./build/bin/watch.js",
-    "dist": "webpack ./build/webpack.dist.js",
+    "dist": "node ./build/bin/dist.js",
     "lint": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
